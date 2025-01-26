@@ -9,6 +9,7 @@ from src.module import get_module_name
 from src.package import PackageMetadata, Package
 
 DEPENDS_ATTR: Final = "Depends"
+HTTP_ARCHIVE_PREFIX: Final = "_main~_repo_rules~"
 
 
 def _is_acceptable_error(err: str):
@@ -171,8 +172,8 @@ def create_deb_package(metadata: PackageMetadata, delimiter: str = "~") -> Packa
     package.pinned_name = _get_deb_pinned_name(
         name=metadata.name, arch=metadata.arch, version=metadata.version
     )
-    package.prefix = f"{get_module_name(name=metadata.name, arch=metadata.arch)}{delimiter}"
-    package.prefix_version = package.prefix + metadata.version
+    package.prefix = f"{HTTP_ARCHIVE_PREFIX}{get_module_name(name=metadata.name, arch=metadata.arch)}"
+    package.prefix_version = f"{get_module_name(name=metadata.name, arch=metadata.arch)}{delimiter}{metadata.version}"
     package.compatibility_level = get_compatibility_level(metadata.version)
     # path to package.deb
     archive_path = _download_package_dot_debian(

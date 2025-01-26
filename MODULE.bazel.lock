@@ -86,19 +86,19 @@
     "@@apple_support~//crosstool:setup.bzl%apple_cc_configure_extension": {
       "general": {
         "bzlTransitiveDigest": "PjIds3feoYE8SGbbIq2SFTZy3zmxeO2tQevJZNDo7iY=",
-        "usagesDigest": "aLmqbvowmHkkBPve05yyDNGN7oh7QE9kBADr3QIZTZs=",
+        "usagesDigest": "+hz7IHWN6A1oVJJWNDB6yZRG+RYhF76wAYItpAeIUIg=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
         "generatedRepoSpecs": {
-          "local_config_apple_cc": {
-            "bzlFile": "@@apple_support~//crosstool:setup.bzl",
-            "ruleClassName": "_apple_cc_autoconf",
-            "attributes": {}
-          },
           "local_config_apple_cc_toolchains": {
             "bzlFile": "@@apple_support~//crosstool:setup.bzl",
             "ruleClassName": "_apple_cc_autoconf_toolchains",
+            "attributes": {}
+          },
+          "local_config_apple_cc": {
+            "bzlFile": "@@apple_support~//crosstool:setup.bzl",
+            "ruleClassName": "_apple_cc_autoconf",
             "attributes": {}
           }
         },
@@ -114,7 +114,7 @@
     "@@ofiuco~//python:extensions.bzl%poetry": {
       "general": {
         "bzlTransitiveDigest": "7NfTJAYtdjPQPgL1LmiwF2VacV/J4QxQ34daxdtDMvA=",
-        "usagesDigest": "r2bS6SIp26EM5tLrQ2zezm8hj0xQb7fZil6bEf9USCw=",
+        "usagesDigest": "x4l+ScJa5Nk+UsjM6R1IcxTuUwvBwMNAHOs1wnU4+O0=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -145,8 +145,8 @@
     },
     "@@ofiuco~//python:internal_deps.bzl%internal_deps": {
       "general": {
-        "bzlTransitiveDigest": "dJyR6WVYMztFvcmROD/gK+DRae+4BAile34RVYhgFEE=",
-        "usagesDigest": "rEdE6PuoFa7fvNxLTFtve6CTep79TqYGMZk37dIrneA=",
+        "bzlTransitiveDigest": "YTZZt+9E0jKEYsqgpV1QT1UrZYYJlcazjgWHW2rlzkM=",
+        "usagesDigest": "0Ienc/DpyfRMxUF81tuUP+++OFRRKtDOMyweSXa6wsU=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -158,17 +158,6 @@
               "python_host": "@@rules_python~~python~python_3_11_host//:python",
               "python_version": "3.11",
               "python_toolchain_prefix": "python"
-            }
-          },
-          "ofiuco_poetry_deps": {
-            "bzlFile": "@@ofiuco~//python:repositories.bzl",
-            "ruleClassName": "poetry_deps_repo",
-            "attributes": {
-              "output": "site-packages",
-              "python_host": "@@rules_python~~python~python_3_11_host//:python",
-              "deps": [
-                "@@ofiuco~~internal_deps~ofiuco_pip//:BUILD.bazel"
-              ]
             }
           },
           "ofiuco_pip": {
@@ -184,6 +173,17 @@
               "auth_patterns": {},
               "netrc": "",
               "build_file_content": "py_library(\n    name = \"pkg\",\n    srcs = glob(include=[\"**/*.py\"]),\n    data = glob(include=[\"**/*\"], exclude=[\n        \"bin/**/*\",\n        \"**/__pycache__/**\",\n        \"**/*.py\",\n        \"**/*.pyc\",\n        \"**/* *\",\n        \"**/*.dist-info/RECORD\",\n    ]),\n    visibility = [\"//visibility:public\"],\n    imports = [\".\"],\n)\n"
+            }
+          },
+          "ofiuco_poetry_deps": {
+            "bzlFile": "@@ofiuco~//python:repositories.bzl",
+            "ruleClassName": "poetry_deps_repo",
+            "attributes": {
+              "output": "site-packages",
+              "python_host": "@@rules_python~~python~python_3_11_host//:python",
+              "deps": [
+                "@@ofiuco~~internal_deps~ofiuco_pip//:BUILD.bazel"
+              ]
             }
           }
         },
@@ -204,7 +204,7 @@
     "@@platforms//host:extension.bzl%host_platform": {
       "general": {
         "bzlTransitiveDigest": "xelQcPZH8+tmuOHVjL9vDxMnnQNMlwj0SlvgoqBkm4U=",
-        "usagesDigest": "V1R2Y2oMxKNfx2WCWpSCaUV1WefW1o8HZGm3v1vHgY4=",
+        "usagesDigest": "hgylFkgWSg0ulUwWZzEM1aIftlUnbmw2ynWLdEfHnZc=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
